@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="addMinus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" id="currentValue" class="form-control text-center" value="1">
+                           <button id="addPlsus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5>$ <span id ="Amount">1219</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button id="2ndaddMinus" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input type="text" id="2ndcurrentValue" class="form-control text-center" value="1">
+                           <button id="2ndaddPlsus" class="btn btn-default"><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5>$ <span id ="2ndAmount">59</span></h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5>$1,278</h5>
+                        <h5>$0</h5>
+                        <h5>$1,278</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <script>
+
+   //   .......................................... // 1st btn start.................................                                       
+     
+               // click plus-btn
+
+            var addPlsusBtn = document.getElementById("addPlsus");
+            addPlsusBtn.addEventListener('click', function(){
+
+
+               // addPlusNumber  
+
+                var currentValue = document.getElementById("currentValue").value;
+                var currentValueNumber = parseFloat(currentValue);
+                var addPlusNumber = currentValueNumber + 1;
+                document.getElementById("currentValue").value =addPlusNumber;
+
+
+               //  add Amount
+
+               var addAmount = document.getElementById("Amount").innerText;
+               var addAmountNumber = parseFloat(addAmount);
+               var totalAmount =  addAmountNumber + 1219;
+               document.getElementById("Amount").innerText = totalAmount;
+
+            })
+
+
+                           // click minus-btn
+
+            var addMinusBtn = document.getElementById("addMinus");
+            addMinusBtn.addEventListener('click', function(){
+
+
+               // addMinusNumber  
+
+                var currentMinusValue = document.getElementById("currentValue").value;
+                var currentMinusValueNumber = parseFloat(currentMinusValue);
+                var addMinusNumber = currentMinusValueNumber - 1;
+                document.getElementById("currentValue").value =addMinusNumber;
+
+
+               //  minus Amount
+
+               var minusAmount = document.getElementById("Amount").innerText;
+               var minusAmountNumber = parseFloat(minusAmount);
+               var totalAmount =  minusAmountNumber - 1219;
+               document.getElementById("Amount").innerText = totalAmount;
+
+            })
+
+      //   .......................................... // 1st btn finish................................. 
+
+
+         //   .......................................... // 2nd btn start................................. 
+            
+               // click plus-btn
+
+               var add2ndPlsusBtn = document.getElementById("2ndaddPlsus");
+               add2ndPlsusBtn.addEventListener('click', function(){
+
+
+               // addPlusNumber  
+
+                var current2ndValue = document.getElementById("2ndcurrentValue").value;
+                var current2ndValueNumber = parseFloat(current2ndValue);
+                var addPlus2ndNumber = current2ndValueNumber + 1;
+                document.getElementById("2ndcurrentValue").value =addPlus2ndNumber;
+
+
+               //  add Amount
+
+               var add2ndAmount = document.getElementById("2ndAmount").innerText;
+               var addAmount2ndNumber = parseFloat(add2ndAmount);
+               var total2ndAmount =  addAmount2ndNumber + 59;
+               document.getElementById("2ndAmount").innerText = total2ndAmount;
+
+            })
+
+
+                           // click minus-btn
+
+            var add2ndMinusBtn = document.getElementById("2ndaddMinus");
+            add2ndMinusBtn.addEventListener('click', function(){
+
+
+               // addMinusNumber  
+
+                var current2ndMinusValue = document.getElementById("2ndcurrentValue").value;
+                var currentMinusValue2ndNumber = parseFloat(current2ndMinusValue);
+                var addMinus2ndNumber = currentMinusValue2ndNumber - 1;
+                document.getElementById("2ndcurrentValue").value =addMinus2ndNumber;
+
+
+               //  minus Amount
+
+               var minus2ndAmount = document.getElementById("2ndAmount").innerText;
+               var minusAmount2ndNumber = parseFloat(minus2ndAmount);
+               var total2ndAmount =  minusAmount2ndNumber - 59;
+               document.getElementById("2ndAmount").innerText = total2ndAmount;
+
+            })
+
+         
+   //   .......................................... // 2nd btn finish................................. 
+
+
+
+   </script>
+
+
+</body>
+
+</html>
