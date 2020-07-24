@@ -64,14 +64,14 @@
                      </div>
 
                      <div class="col-md-4 status">
-                        <h5>$1,278</h5>
-                        <h5>$0</h5>
-                        <h5>$1,278</h5>
+                        <h5>$ <span id="subtotal">1278</span></h5>
+                        <h5>$ <span id="tax">15</span></h5>
+                        <h5>$ <span id="totalEnd">1293</span></h5>
                      </div>
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button id="check" type="button" class="btn btn-success check-out">Check Out</button>
                </div>
             </div>
          </div>
@@ -104,6 +104,28 @@
                var totalAmount =  addAmountNumber + 1219;
                document.getElementById("Amount").innerText = totalAmount;
 
+               // add Subtotal
+
+               var addSubtotal = document.getElementById("subtotal").innerText;
+               var addSubtotalNumber = parseFloat(addSubtotal);
+               var subtotalAmount =  addSubtotalNumber + 1219;
+               document.getElementById("subtotal").innerText = subtotalAmount;
+
+              //  add tax
+
+               var addTax = document.getElementById("tax").innerText;
+               var addTaxNumber = parseFloat(addTax);
+               var taxAmount =  addTaxNumber + 12;
+               document.getElementById("tax").innerText = taxAmount;
+
+
+              // add totalEnd
+
+               var addtotalEnd = document.getElementById("totalEnd").innerText;
+               var addtotalEndlNumber = parseFloat(addtotalEnd);
+               var addtotalEndlAmount =  addtotalEndlNumber + 1219 + 12;
+               document.getElementById("totalEnd").innerText = addtotalEndlAmount;
+
             })
 
 
@@ -127,6 +149,30 @@
                var minusAmountNumber = parseFloat(minusAmount);
                var totalAmount =  minusAmountNumber - 1219;
                document.getElementById("Amount").innerText = totalAmount;
+
+
+               // minus Subtotal
+
+               var minusSubtotal = document.getElementById("subtotal").innerText;
+               var minusSubtotalNumber = parseFloat(minusSubtotal);
+               var subtotalAmount =  minusSubtotalNumber - 1219;
+               document.getElementById("subtotal").innerText = subtotalAmount;
+
+
+               //  minus tax
+
+               var minusTax = document.getElementById("tax").innerText;
+               var minusTaxNumber = parseFloat(minusTax);
+               var taxAmount =  minusTaxNumber - 12;
+               document.getElementById("tax").innerText = taxAmount;
+
+
+              // minus totalEnd
+
+               var minusTotalEnd = document.getElementById("totalEnd").innerText;
+               var minusTotalEndlNumber = parseFloat(minusTotalEnd);
+               var minusTotalEndlAmount =  minusTotalEndlNumber - 1219 - 12;
+               document.getElementById("totalEnd").innerText = minusTotalEndlAmount;
 
             })
 
@@ -156,6 +202,30 @@
                var total2ndAmount =  addAmount2ndNumber + 59;
                document.getElementById("2ndAmount").innerText = total2ndAmount;
 
+
+                         // add Subtotal
+
+               var addSubtotal = document.getElementById("subtotal").innerText;
+               var addSubtotalNumber = parseFloat(addSubtotal);
+               var subtotalAmount =  addSubtotalNumber + 59;
+               document.getElementById("subtotal").innerText = subtotalAmount;
+
+
+                         //  add tax
+
+               var addTax = document.getElementById("tax").innerText;
+               var addTaxNumber = parseFloat(addTax);
+               var taxAmount =  addTaxNumber + 3;
+               document.getElementById("tax").innerText = taxAmount;
+
+
+                         // add totalEnd
+
+               var addtotalEnd = document.getElementById("totalEnd").innerText;
+               var addtotalEndlNumber = parseFloat(addtotalEnd);
+               var addtotalEndlAmount =  addtotalEndlNumber + 59 + 3;
+               document.getElementById("totalEnd").innerText = addtotalEndlAmount;
+
             })
 
 
@@ -180,10 +250,46 @@
                var total2ndAmount =  minusAmount2ndNumber - 59;
                document.getElementById("2ndAmount").innerText = total2ndAmount;
 
+
+              // minus Subtotal
+
+               var minusSubtotal = document.getElementById("subtotal").innerText;
+               var minusSubtotalNumber = parseFloat(minusSubtotal);
+               var subtotalAmount =  minusSubtotalNumber - 59;
+               document.getElementById("subtotal").innerText = subtotalAmount;
+
+
+             //  minus tax
+
+               var minusTax = document.getElementById("tax").innerText;
+               var minusTaxNumber = parseFloat(minusTax);
+               var taxAmount =  minusTaxNumber - 3;
+               document.getElementById("tax").innerText = taxAmount;
+
+
+              // minus totalEnd
+
+               var minusTotalEnd = document.getElementById("totalEnd").innerText;
+               var minusTotalEndlNumber = parseFloat(minusTotalEnd);
+               var minusTotalEndlAmount =  minusTotalEndlNumber - 59 - 3;
+               document.getElementById("totalEnd").innerText = minusTotalEndlAmount;
+
+ 
             })
 
          
    //   .......................................... // 2nd btn finish................................. 
+
+
+         //  Checkout button
+
+
+            var addCheckBtn = document.getElementById("check");
+            addCheckBtn.addEventListener('click', function(){
+
+                 alert("This product is not available now.")
+
+            })
 
 
 
